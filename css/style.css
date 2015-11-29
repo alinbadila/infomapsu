@@ -17,20 +17,24 @@ body {
 }
 ::-webkit-input-placeholder {
     /* WebKit browsers */
+    background-color: transparent;
     color: dimgray;
 }
 :-moz-placeholder {
     /* Mozilla Firefox 4 to 18 */
+    background-color: transparent;
     color: dimgray;
     opacity: 1;
 }
 ::-moz-placeholder {
     /* Mozilla Firefox 19+ */
+    background-color: transparent;
     color: dimgray;
     opacity: 1;
 }
 :-ms-input-placeholder {
     /* Internet Explorer 10+ */
+    background-color: transparent;
     color: dimgray;
 }
 span.badge.high {
@@ -72,7 +76,7 @@ span.badge.high {
     border-color: #ee6e73;
 }
 .pac-container {
-    font-family: Roboto;
+    font-family: Roboto, serif;
     /*min-width: 385px;*/
 }
 #type-selector {
@@ -81,7 +85,7 @@ span.badge.high {
     padding: 5px 11px 0px 11px;
 }
 #type-selector label {
-    font-family: Roboto;
+    font-family: Roboto, serif;
     font-size: 13px;
     font-weight: 300;
 }
