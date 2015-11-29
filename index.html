@@ -3,16 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>InfoMapSU - în ajutorul pompierilor</title>
-    <script type="text/javascript" async defer
-      src="http://maps.googleapis.com/maps/api/js?libraries=places">
-      </script>
 
-  </head>
+    <style type="text/css">
+      html, body {
+        height: 100%; margin: 0; padding: 0;
+      }
+      #map { height: 100%; }
+    </style>
+
+    <script type="text/javascript" async defer
+      src="https://maps.googleapis.com/maps/api/js">
+    </script>
+
+    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
+    </head>
 
   <body>
-    <main id="map" onclick="hideAll();">
-    </main>
-
+    <div id="map"></div>
     <script type="text/javascript" src="js/mapSetup.js"></script>
   </body>
 </html>
