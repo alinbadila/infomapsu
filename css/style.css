@@ -1,0 +1,187 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#map {
+    display: block;
+    position: absolute;
+    height: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+}
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: dimgray;
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: dimgray;
+    opacity: 1;
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: dimgray;
+    opacity: 1;
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: dimgray;
+}
+span.badge.high {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #26a69a;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box
+}
+
+/* ===========================================  SEARCH BOX =============================== */
+
+@media only screen and (max-width: 600px) {
+    #pac-input {
+        display: inline-block;
+        width: 155px !important;
+    }
+}
+@media only screen and (min-width: 601px) {
+    #pac-input {
+        display: inline-block;
+        width: 400px !important;
+    }
+}
+#pac-input {
+    background-color: #fff;
+    color: #000;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    border-bottom-width: 0;
+    height: 28px;
+    margin: 0 10px 0 10px;
+}
+#pac-input:focus {
+    border: 10px;
+    border-color: #ee6e73;
+}
+.pac-container {
+    font-family: Roboto;
+    /*min-width: 385px;*/
+}
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+#type-selector label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+/* cursoare */
+
+.auto {
+    cursor: auto !important;
+}
+.default {
+    cursor: default !important;
+}
+.none {
+    cursor: none !important;
+}
+.context-menu {
+    cursor: context-menu !important;
+}
+.help {
+    cursor: help !important;
+}
+.pointer {
+    cursor: pointer !important;
+}
+.progress {
+    cursor: progress !important;
+}
+.wait {
+    cursor: wait !important;
+}
+.cell {
+    cursor: cell !important;
+}
+.crosshair {
+    cursor: crosshair !important;
+}
+.text {
+    cursor: text !important;
+}
+.vertical-text {
+    cursor: vertical-text !important;
+}
+.alias {
+    cursor: alias !important;
+}
+.copy {
+    cursor: copy !important;
+}
+.move {
+    cursor: move !important;
+}
+.no-drop {
+    cursor: no-drop !important;
+}
+.not-allowed {
+    cursor: not-allowed !important;
+}
+.all-scroll {
+    cursor: all-scroll !important;
+}
+.col-resize {
+    cursor: col-resize !important;
+}
+.row-resize {
+    cursor: row-resize !important;
+}
+.n-resize {
+    cursor: n-resize !important;
+}
+.e-resize {
+    cursor: e-resize !important;
+}
+.s-resize {
+    cursor: s-resize !important;
+}
+.w-resize {
+    cursor: w-resize !important;
+}
+.ns-resize {
+    cursor: ns-resize !important;
+}
+.ew-resize {
+    cursor: ew-resize !important;
+}
+.ne-resize {
+    cursor: ne-resize !important;
+}
+.nw-resize {
+    cursor: nw-resize !important;
+}
+.se-resize {
+    cursor: se-resize !important;
+}
+.sw-resize {
+    cursor: sw-resize !important;
+}
+.nesw-resize {
+    cursor: nesw-resize !important;
+}
+.nwse-resize {
+    cursor: nwse-resize !important;
+}
+

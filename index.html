@@ -1,25 +1,37 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
+
     <title>InfoMapSU - în ajutorul pompierilor</title>
+    <script type="text/javascript" async="" defer src="https://maps.googleapis.com/maps/api/js">
+</script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript">
+</script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-    <style type="text/css">
-      html, body {
-        height: 100%; margin: 0; padding: 0;
-      }
-      #map { height: 100%; }
-    </style>
+<body>
+	
+    <!-- Bara cu butoane -->
+    <nav>
+        <div class="navbar-fixed z-depth-5">
+            <div>
+                <a href="?logout" id="signin-button" title="Deconectare" class="right waves-circle waves-effect waves-light"></a> 
+                <a href="#" id="menuDiv" data-beloworigin="true" data-activates="dropdown1" title="Meniu" class="dropdown-button right buttoncNav waves-circle waves-effect waves-light"></a> 
+                <a href="#!" onclick="map.panTo(initialLocation);map.setZoom(14)" title="Localizare" class="right waves-effect waves-light waves-circle"></a> 
+                <a href="#!" id="searchDiv" onclick="toggleSearchBar();" title="C&#259;utare" class="right waves-effect waves-circle waves-light"></a>
 
-    <script type="text/javascript" async defer
-      src="https://maps.googleapis.com/maps/api/js">
-    </script>
+                <div class="searchdiv right" style="display: hidden;">
+                    <input id="pac-input" class="controls" type="text" placeholder="Cauta">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- /Bara cu butoane -->
 
-    <script type="text/javascript" src="lib/jquery-2.1.4.min.js"></script>
-    </head>
-
-  <body>
-    <div id="map"></div>
-    <script type="text/javascript" src="js/mapSetup.js"></script>
-  </body>
+    <div id="map"></div><script type="text/javascript" src="js/mapSetup.js">
+</script>
+</body>
 </html>
