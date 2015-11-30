@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8">
-
     <title>InfoMapSU - în ajutorul pompierilor</title>
-    <script type="text/javascript" async="" defer src="https://maps.googleapis.com/maps/api/js">
-</script>
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript">
-</script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:200,500,400,300,700' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen">
+	<!--Import Google Maps API-->
+    <script type="text/javascript" async="" src="https://maps.googleapis.com/maps/api/js"></script>
+    <!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<!--Import mapSetup.js and script.js-->
+	
+    <script type="text/javascript" src="js/script.js"></script>
+	<!--Import css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:200,500,400,300,700" rel="stylesheet" type="text/css"/>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
 </head>
 
 <body>
 	
     <!-- Bara cu butoane -->
     <nav>
-        <div class="navbar-fixed z-depth-5">
-            <div>
-                <a href="#!" id="searchDiv" onclick="toggleSearchBar()" title="C&#259;utare" class="right waves-effect waves-circle waves-light">
-	                <i class="mdi-action-search"></i>
-                </a>
-                <div class="searchdiv right" style="display: hidden">
-                    <input id="pac-input" class="controls" type="text" placeholder="Cauta">
-                </div>
-            </div>
-        </div>
+	    <div class="nav-wrapper">
+		    <ul class="right hide-on-med-and-down">
+			    <li><i class="mdi-action-search"></i></li>
+			    
+		    </ul>
+	    </div>
     </nav>
     <!-- /Bara cu butoane -->
 
-    <div id="map" onclick="hideAll()"></div>
-    <script type="text/javascript" src="js/mapSetup.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/ecmascript" src="js/materialize.min.js"></script>
+    <div id="map" onclick="hideAll()"></div>  
+    <script type="text/javascript" src="js/mapSetup.js"></script>  
 </body>
 </html>
