@@ -3,38 +3,40 @@
 <head>
     <meta charset="utf-8">
     <title>InfoMapSU - în ajutorul pompierilor</title>
-	<!--Import Google Maps API-->
-    <script type="text/javascript" async="" src="https://maps.googleapis.com/maps/api/js"></script>
-    <!--Import jQuery before materialize.js-->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<!--Import mapSetup.js and script.js-->
-	
-    <script type="text/javascript" src="js/script.js"></script>
-	<!--Import css-->
-	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <!-- Import jQuery before materialize.js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Import Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <!-- Import css -->
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link href="http://fonts.googleapis.com/css?family=Roboto:200,500,400,300,700" rel="stylesheet" type="text/css"/>
-	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="mobile-web-app-capable" content="yes">
+    <!-- Let browser know website is optimized for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
 
 <body>
-	
-    <!-- Bara cu butoane -->
-    <nav>
-	    <div class="nav-wrapper">
-		    <ul class="right hide-on-med-and-down">
-			    <li><i class="mdi-action-search"></i></li>
-			    
-		    </ul>
-	    </div>
-    </nav>
-    <!-- /Bara cu butoane -->
 
-    <div id="map" onclick="hideAll()"></div>  
-    <script type="text/javascript" src="js/mapSetup.js"></script>  
+<!-- Bara cu butoane -->
+<nav>
+    <div>
+        <a href="#!" onclick="map.panTo(initialLocation);map.setZoom(14)" title="Localizare" class="right waves-effect waves-light waves-circle">
+            <i class="mdi-maps-my-location"></i></a>
+        <a href="#!" id="searchDiv" onclick="toggleSearchBar()" title="Cautare" class="right waves-effect waves-circle waves-light">
+            <i class="mdi-action-search"></i></a>
+        <div class="searchdiv right" style="display: none; overflow: hidden">
+            <input id="pac-input" class="controls" type="text" placeholder="Cauta" autocomplete="off">
+        </div>
+    </div>
+</nav>
+<!-- /Bara cu butoane -->
+
+<main id="map"></main>
+<!-- Import mapSetup.js and script.js -->
+<script type="text/javascript" src="js/mapSetup.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

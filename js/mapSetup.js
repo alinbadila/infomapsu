@@ -5,7 +5,7 @@ var initialLocation;
 var lat;
 var lng;
 
-function showMap() {
+window.onload = function showMap() {
 	var mapOptions = {
 		zoom: 14,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -27,7 +27,14 @@ function showMap() {
 		},
 		scaleControl: true
 	}
+
 	map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    setupGeolocation();
+    setupSearchBox();
+}
+
+/** Tests if browser supports geolocation and sets the initialLocation variable**/
+function setupGeolocation() {
 	if (navigator.geolocation) {
 		browserSupportFlag = true;
 		navigator.geolocation.getCurrentPosition(function(position) {
@@ -35,7 +42,6 @@ function showMap() {
 			lat = position.coords.latitude;
 			lng = position.coords.longitude;
 			map.setCenter(initialLocation);
-			query = "ST_DISTANCE('Coordonate', LATLNG(" + lat + "," + lng + "))";
 		}, function() {
 			handleNoGeolocation(browserSupportFlag);
 		});
@@ -43,9 +49,9 @@ function showMap() {
 		browserSupportFlag = false;
 		handleNoGeolocation(browserSupportFlag);
 	}
-/**
-   Daca nu se poate stabili locatia, harta se centreaza pe sediul Detasamentului de Pompieri Medias
-**/
+
+    //Set default location to Detasamentului de Pompieri Medias if browser has no geolocation
+
 	function handleNoGeolocation(errorFlag) {
 		if (errorFlag == true) {
 			alert("Geolocation service failed.");
@@ -59,7 +65,25 @@ function showMap() {
 			initialLocation = new google.maps.LatLng(lat, lng);
 		}
 		map.setCenter(initialLocation);
-		query = "\"ST_DISTANCE('Coordonate', LATLNG(" + lat + "," + lng + "))\"";
 	}
 }
-$(document).ready(showMap());
+
+function setupSearchBox() {
+/** Autocomplete in search box**/
+	//Get the id of the search box and setup autocomplete
+	var searchBox = new google.maps.places.SearchBox(document.getElementById("pac-input"));
+	// Listen for the event fired when the user selects an item from the
+    // pick list. Retrieve the matching places for that item.
+    google.maps.event.addListener(searchBox, 'places_changed', function() {
+        var place = searchBox.getPlaces()[0];
+        if (!place.geometry) return;
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(14);
+        }
+    });
+    $('.searchdiv').hide();
+}
