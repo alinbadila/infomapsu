@@ -20,11 +20,13 @@
 
 <body>
 
-<!-- Bara cu butoane -->
+<!-- Navigation toolbar -->
 <nav>
     <div>
         <a href="#!" onclick="map.panTo(initialLocation);map.setZoom(14)" title="Localizare" class="right waves-effect waves-light waves-circle">
             <i class="mdi-maps-my-location"></i></a>
+        <a href="#" id="menuDiv" data-beloworigin="true" data-activates="dropdown1" title="Meniu" class="dropdown-button right buttoncNav waves-circle waves-effect waves-light">
+            <i class="mdi-maps-layers"></i></a>
         <a href="#!" id="searchDiv" onclick="toggleSearchBar()" title="Cautare" class="right waves-effect waves-circle waves-light">
             <i class="mdi-action-search"></i></a>
         <div class="searchdiv right" style="display: none; overflow: hidden">
@@ -32,13 +34,113 @@
         </div>
     </div>
 </nav>
-<!-- /Bara cu butoane -->
+<!-- /navigation toolbar -->
 
+<!-- Dropdown option list -->
+<ul id="dropdown1" class="dropdown-content" style="display: none; top: 39px; left: 555px; height: 404px; opacity: 1; overflow-y: auto;">
+    <li>
+        <!--<a href="#!">-->
+            <input type="checkbox" id="hidranti" onclick="switchLayer(this.checked, this.id)">
+            <label for="hidranti">Hidranți (toți)</label>
+        <!--</a>-->
+    </li>
+    <li>
+        <a href="#!">
+            <input id="10_hidranti" type="checkbox" onclick="switchLayer(this.checked, this.id)">
+            <label for="10_hidranti">Hidranți (în apropiere)</label>
+        </a>
+    </li>
+    <li>
+        <a href="#!">
+            <input id="surse_naturale" type="checkbox" disabled="" onclick="switchLayer(this.checked, this.id)">
+            <label for="surse_naturale">Surse nat. de alim. cu apă</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li class="not-allowed">
+        <a href="#!">
+            <input type="checkbox" id="subunitati" onclick="switchLayer(this.checked, this.id)">
+            <label for="subunitati">Subunități</label>
+        </a>
+    </li>
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="raioane" onclick="switchLayer(this.checked, this.id)">
+            <label for="raioane">Raioane</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li>
+        <a href="#!">
+            <input id="clsu" type="checkbox" onclick="switchLayer(this.checked, this.id)">
+            <label for="clsu">Primării (CLSU/CJSU/CMBSU)</label>
+        </a>
+    </li>
+    <li>
+        <a href="#!">
+            <input id="off-road" type="checkbox" onclick="switchLayer(this.checked, this.id)">
+            <label for="off-road">Cluburi off-road</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="barca" onclick="switchLayer(this.checked, this.id)">
+            <label for="barca">Locații lansare barcă</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="politia" disabled="" onclick="switchLayer(this.checked, this.id)">
+            <label for="politia">Poliția</label>
+        </a>
+    </li>
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="jandarmeria" disabled="" onclick="switchLayer(this.checked, this.id)">
+            <label for="jandarmeria">Jandarmeria</label>
+        </a>
+    </li>
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="sabif" disabled="" onclick="switchLayer(this.checked, this.id)">
+            <label for="sabif">Ambulanța (SABIF)</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="opec" onclick="switchLayer(this.checked, this.id)">
+            <label for="opec">Operatori ec. surse de risc</label>
+        </a>
+    </li>
+    <li class="divider"></li>
+    <!-- Linie despartire sectiuni / -->
+    <li>
+        <a href="#!">
+            <input type="checkbox" id="trafic" onclick="switchLayer(this.checked, this.id)">
+            <label for="trafic">Trafic</label>
+        </a>
+    </li>
+</ul>
+<!-- /Dropdown option list -->
+
+<!-- The MAP -->
 <main id="map"></main>
+<!-- /The MAP -->
+
 <!-- Import mapSetup.js and script.js -->
 <script type="text/javascript" src="js/mapSetup.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+
 <!-- Show the map after the document is loaded -->
 <script type="text/javascript">$(document).ready(showMap());</script>
+
 </body>
 </html>

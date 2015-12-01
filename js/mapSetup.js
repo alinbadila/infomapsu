@@ -1,16 +1,15 @@
-
 var map;
-var browserSupportFlag = false;
-var query;
 var initialLocation;
 var lat;
 var lng;
 
 /** Tests if browser supports geolocation and sets the initialLocation variable**/
 function setupGeolocation() {
+    "use strict";
+    var browserSupportFlag;
     if (navigator.geolocation) {
         browserSupportFlag = true;
-        navigator.geolocation.getCurrentPosition( function(position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             lat = position.coords.latitude;
             lng = position.coords.longitude;
@@ -22,23 +21,22 @@ function setupGeolocation() {
         browserSupportFlag = false;
         handleNoGeolocation(browserSupportFlag);
     }
+}
 
-    //Set default location to Detasamentului de Pompieri Medias if browser has no geolocation
-
-    function handleNoGeolocation(errorFlag) {
-        if (errorFlag === true) {
+//Set default location to Detasamentului de Pompieri Medias if browser has no geolocation
+function handleNoGeolocation(errorFlag) {
+    if (errorFlag === true) {
         alert("Geolocation service failed.");
-            lat = 46.161629;
-            lng = 24.350302;
-            initialLocation = new google.maps.LatLng(lat, lng);
-        } else {
-            alert("Your browser doesn't support geolocation.");
-            lat = 46.161629;
-            lng = 24.350302;
-            initialLocation = new google.maps.LatLng(lat, lng);
-        }
-        map.setCenter(initialLocation);
+        lat = 46.161629;
+        lng = 24.350302;
+        initialLocation = new google.maps.LatLng(lat, lng);
+    } else {
+        alert("Your browser doesn't support geolocation.");
+        lat = 46.161629;
+        lng = 24.350302;
+        initialLocation = new google.maps.LatLng(lat, lng);
     }
+    map.setCenter(initialLocation);
 }
 
 function setupSearchBox() {
@@ -60,11 +58,12 @@ function setupSearchBox() {
             map.setCenter(place.geometry.location);
             map.setZoom(14);
         }
+        $('.searchdiv').hide();
     });
-    $('.searchdiv').hide();
 }
 
 function showMap() {
+    "use strict";
     var mapOptions = {
         zoom: 14,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
