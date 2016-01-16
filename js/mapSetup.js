@@ -2,6 +2,13 @@ var map;
 var initialLocation;
 var lat;
 var lng;
+var layersDictionary = {
+    "hidranti" : new google.maps.FusionTablesLayer({
+                    query: {
+                    select: 'locatie',
+                    from: '1E82B1lAsvThLxeTfAAEBOgFrwqKbeLxSmx5yxYgK'
+                    }})
+    };
 
 /** Tests if browser supports geolocation and sets the initialLocation variable**/
 function setupGeolocation() {
@@ -90,3 +97,15 @@ function showMap() {
     setupGeolocation();
     setupSearchBox();
 }
+
+function showLayer(isChecked, id) {
+
+    var layer = layersDictionary[id];
+
+    if (isChecked) {
+        if (id === "hidranti") {
+            layer.setMap(map);
+        }
+    } else { layer.setMap(null); };
+}
+
