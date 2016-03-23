@@ -13,6 +13,9 @@ evisu.iml
 # Build folder
 build/
 
+# Photoshop files
+pool/infomapsu_banner.psd
+
 # OS generated files #
 ######################
 .DS_Store
