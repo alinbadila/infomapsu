@@ -14,7 +14,7 @@ evisu.iml
 build/
 
 # Photoshop files
-pool/infomapsu_banner.psd
+/pool/infomapsu_banner.psd
 
 # OS generated files #
 ######################
